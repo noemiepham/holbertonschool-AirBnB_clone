@@ -39,7 +39,8 @@ class FileStorage():
         from models.amenity import Amenity
         from models.review import Review
         try:
-            with open(FileStorage.__file_path, encoding="utf-8-sig") as file_name2:
+            with open(FileStorage.__file_path,
+                      encoding="utf-8-sig") as file_name2:
                 data = json.load(file_name2)
                 cls = '__class__'
                 for key, value in data.items():

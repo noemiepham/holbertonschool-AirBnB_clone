@@ -136,4 +136,3 @@ def check_exited(list_args):
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
-
