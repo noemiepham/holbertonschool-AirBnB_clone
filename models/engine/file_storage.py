@@ -1,7 +1,6 @@
 # !/usr/bin/python3
 """import module"""
 import json
-import os
 
 
 class FileStorage():
@@ -24,9 +23,9 @@ class FileStorage():
         new_dict = {}
         for key, value in FileStorage.__objects.items():
             new_dict[key] = value.to_dict()
-            with open(FileStorage.__file_path, "w", encoding="UTF8") \
-                 as fil_name:
-                json.dump(new_dict, fil_name)
+        with open(FileStorage.__file_path, "w", encoding="UTF8") \
+                as fil_name:
+            json.dump(new_dict, fil_name)
 
     def reload(self):
         """deserializes"""
