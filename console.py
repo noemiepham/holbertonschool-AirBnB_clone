@@ -1,138 +1,177 @@
 #!/usr/bin/python3
-"""import module"""
-import cmd
+"""
+    Console module
+"""
+
+
 import models
 from models.base_model import BaseModel
+from models.engine.file_storage import FileStorage
+from datetime import datetime
+import cmd
+from models.user import User
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.place import Place
+from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    """command line"""
-    prompt = "(hbnb)"
-
-    list_class = ["BaseModel", "User", "City",
-                  "Amenity", "Place", "State", "Review"]
+    """
+        Define HBNBCommand class for console
+    """
+    prompt = "(hbnb) "
+    all_classes = ['BaseModel', 'User', 'Place', 'State',
+                   'City', 'Amenity', 'Review']
 
     def do_quit(self, args):
-        """quit"""
+        """
+            Command to quit from the command interpreter
+        """
         return True
 
     def do_EOF(self, args):
-        """end"""
-
+        """
+            Command to exit from the command interpreter
+        """
         return True
 
     def help_quit(self):
-        """help"""
+        """
+            Command to show quit documentation
+        """
         print("Quit command to exit the program\n")
 
     def emptyline(self):
-        """empty"""
+        """
+            Command do nothing when emptyline appears
+        """
         pass
 
     def do_create(self, args):
-        """create class BaseModel"""
-        args_input = args.split()
-        if len(args_input) == 0:
-            print("** class name missing **")
+        """Creates a new instance in all_classes, saves it to the JSON file
+            and prints the id
+        """
+        arguments_list = args.split()
+        if len(arguments_list) == 0:
+            print('** class name missing **')
             return
         try:
-            string_represent = eval(args_input[0] + '()')
-            string_represent.save()
-            print(string_represent.id)
+            dummy = eval(arguments_list[0] + '()')
+            dummy.save()
+            print(dummy.id)
         except:
             print("** class doesn't exist **")
 
     def do_show(self, args):
-        """print the string representation"""
-        args_input = args.split()
-        if check_exited(args_input):
-            object_ref = check_exited(args_input)
-            all_inst = models.storage.all()
-            if object_ref in all_inst.keys():
-                ref = all_inst[object_ref]
-                print(ref)
+        """Prints the string representation of an instance based
+            on the class name and id
+        """
+        arguments_list = args.split()
+
+        if validate(arguments_list):
+            objeto_reference = validate(arguments_list)
+            all_instances = models.storage.all()
+
+            if objeto_reference in all_instances.keys():
+                reference = all_instances[objeto_reference]
+                print(reference)
             else:
                 print("** no instance found **")
+                return
 
     def do_destroy(self, args):
-        """Deletes an instance"""
-        args_input = args.split()
-        if check_exited(args_input):
-            object_ref = check_exited(args_input)
-            all_inst = models.storage.all()
-            if object_ref in all_inst.keys():
-                del all_inst[object_ref]
+        """Deletes an instance based on the class name and id,
+            save the change into the JSON file
+        """
+        arguments_list = args.split()
+        if validate(arguments_list):
+            obj_reference = validate(arguments_list)
+            all_instances = models.storage.all()
+
+            if obj_reference in all_instances.keys():
+                del all_instances[obj_reference]
                 models.storage.save()
             else:
                 print("** no instance found **")
                 return
 
     def do_all(self, args):
-        """all"""
+        """Prints all string representation of all instances
+            based or not on the class name
+        """
         instances = models.storage.all()
         if args:
-            args_input = args.split()
-            print(args_input[0])
-            if args_input[0] not in self.list_class:
+            arg_list = args.split()
+            print(arg_list[0])
+            if arg_list[0] not in self.all_classes:
                 print("** class doesn't exist **")
             else:
                 new_list = [str(instances[obj]) for obj in instances.keys()
-                            if args_input[0] in obj]
+                            if arg_list[0] in obj]
                 print(new_list)
         else:
             new_list = [str(instances[obj]) for obj in instances.keys()]
             print(new_list)
 
     def do_update(self, args):
-        """update"""
-        args_input = args.split()
-        if check_exited(args_input):
-            object_ref = check_exited(args_input)
-            all_inst = models.storage.all()
-            if object_ref in all_inst.keys():
-                obj = all_inst[object_ref]
-                len_arg = len(args_input)
-                if len_arg < 3:
+        """Update an specific dictionary based in the class name
+            and the id reference
+        """
+        arguments_list = args.split()
+        if validate(arguments_list):
+            objeto_reference = validate(arguments_list)
+            all_instances = models.storage.all()
+
+            if objeto_reference in all_instances.keys():
+                obj = all_instances[objeto_reference]
+                len_arg_list = len(arguments_list)
+
+                if len_arg_list < 3:
                     print("** attribute name missing **")
                     return
-                elif len_arg < 4:
+                elif len_arg_list < 4:
                     print("** value missing **")
                     return
                 else:
                     try:
-                        value = int(args_input[3].replace('"', ""))
+                        value = int(arguments_list[3].replace('"', ""))
                     except:
                         try:
-                            value = float(args_input[3].replace('"', ""))
+                            value = float(arguments_list[3].replace('"', ""))
                         except:
                             try:
-                                value = str(args_input[3].replace('"', ""))
+                                value = str(arguments_list[3].replace('"', ""))
                             except:
                                 pass
-                obj.__dict__[args_input[2]] = value
-                models.storage.save()
-                return
+                    obj.__dict__[arguments_list[2]] = value
+                    models.storage.save()
+                    return
             else:
                 print("** no instance found **")
                 return
 
 
-def check_exited(list_args):
-    """check Function to valide content"""
+def validate(list_args):
+    """Function to validate content in list or arguments
+    """
     if list:
         len_list = len(list_args)
-    if 1 > len_list:
-        print("** class name missing **")
-        return None
-    if list_args[0] not in HBNBCommand.list_class:
-        print("** class doesn't exist **")
-        return None
-    if len_list < 2:
-        print("** instance id missing **")
-        return None
-    obj_reference = list_args[0] + '.' + list_args[1]
-    return obj_reference
+        if len_list < 1:
+            print("** class name missing **")
+            return None
 
+        if (list_args[0] not in HBNBCommand.all_classes):
+            print("** class doesn't exist **")
+            return None
+
+        if len_list < 2:
+            print("** instance id missing **")
+            return None
+
+        obj_reference = list_args[0] + '.' + list_args[1]
+        return obj_reference
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
