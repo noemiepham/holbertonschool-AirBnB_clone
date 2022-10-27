@@ -4,6 +4,9 @@ header {
      width: 100%;
      border-bottom: solid 1px #CCCCCC;
 
-     background-image: url("/holbertonschool-web_front_end/web_static/images/logo-icon.png");
+     background-image: url("/holbertonschool-AirBnB_clone/web_static/images/logo-icon.png");
      background-repeat: no-repeat;
+}
+.logo-icon {
+     background-image: ;
 }

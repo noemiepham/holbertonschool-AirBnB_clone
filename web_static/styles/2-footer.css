@@ -2,13 +2,12 @@ footer {
      background-color: white;
      height: 60px;
      width: 100%;
-     
-     display: flex;
-     text-align: center;
-     justify-content: center;
 
-     position: absolute;
-     border-top: solid 1px #CCCCCC;
+     position: fixed;
      bottom: 0%;
-     
+}
+
+footer p {
+     text-align: center;
+     line-height: 30px;
 }
