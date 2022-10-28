@@ -47,8 +47,10 @@ border-right: solid #DDDDDD 1px;
 
 .filters h3 {
      font-weight: 600;
+     line-height: 0px;
 }
 .filters h4 {
      font-weight: 400;
      font-size: 14px;
+     line-height: 0px;
 }
