@@ -139,7 +139,7 @@ Requirements:
     -   `styles/6-filters.css`: for the filters style
     -   `styles/100-places.css`: for the places style
 
-![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/0e0e57ed2baf9239cc87000a5f81b54011a924e9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221028%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221028T040939Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=32ce32665754e532af616faa05e937101bb4cacf1f310dd473ad8ff1f45af45b)
+![Site](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/0e0e57ed2baf9239cc87000a5f81b54011a924e9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221028%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221028T040939Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=32ce32665754e532af616faa05e937101bb4cacf1f310dd473ad8ff1f45af45b)
 
 **Repo:**
 
