@@ -12,6 +12,7 @@
 } 
 
 .places article {
+     
      width: 390px;
      padding: 20px;
      margin: 20px;
@@ -20,6 +21,8 @@
 
      position: relative;
      display: inline-block;
+
+     z-index: 1;
 
 }
 
