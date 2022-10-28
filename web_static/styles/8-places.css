@@ -75,3 +75,24 @@
 
      margin-top: 20px;
 }
+
+.information div {
+     background-position: top;
+     background-repeat: no-repeat;
+     position: relative;
+} 
+
+div.max_guest {
+     background-image: url(/holbertonschool-AirBnB_clone/web_static/images/icon_group.png);
+}
+div.number_rooms {
+     background-image: url(/holbertonschool-AirBnB_clone/web_static/images/icon_bed.png);
+}
+div.number_bathrooms{
+     background-image: url(/holbertonschool-AirBnB_clone/web_static/images/icon_bath.png);
+}
+
+
+.information div p {
+     margin-top: 50px;
+}
