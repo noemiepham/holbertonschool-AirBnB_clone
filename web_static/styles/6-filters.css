@@ -43,7 +43,7 @@ button:hover {
 
 /* ----------Amenities & Stage-------- */
 
-div.location, div.amenities {
+div.location, div.amenities{
 width: 25%;
 height: 100%;
 
@@ -70,11 +70,9 @@ border-right: solid #DDDDDD 1px;
 }
 /* ------dropdown menu----- */
 .popover {
-     list-style: none;
-
      background-color: #FAFAFA;
      box-sizing: border-box;
-     border: solid 1px #DDDDDD;
+     border: var(--border_bottom);
      border-radius: 4px;
 
      visibility: hidden;
@@ -84,7 +82,7 @@ border-right: solid #DDDDDD 1px;
      position: absolute;
      width: 100%;
 
-     padding: 20px;
+     padding-bottom: 20px;
 
 }
 
@@ -95,15 +93,13 @@ border-right: solid #DDDDDD 1px;
 }
 
 .location .popover li h2 {
-     font-size: 16px;
+     font-size: var(--font_size_h2);
 }
 
 .location ul li:not(.titles){
      margin-left: 20px;
-
-
-
 }
+
 .amenities:hover ul {
      visibility: visible;
      opacity: 1;

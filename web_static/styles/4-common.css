@@ -15,3 +15,13 @@ div.container {
 }
 
 
+li {
+     list-style: none;
+
+}
+
+
+:root{
+     --border_bottom: 1px #DDDDDD solid;
+     --font_size_h2: 16px;
+}

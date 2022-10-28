@@ -1,0 +1,121 @@
+.places {
+     text-align: center;
+     z-index: 1;
+}
+
+.places h1 {
+     position: relative;
+     font-size: 30px;
+     text-align: left;                                                          
+
+     margin: 20px;
+
+} 
+
+.places article {
+     width: 390px;
+     padding: 20px;
+     margin: 20px;
+     border: 1px solid #FF5A5F;
+     border-radius: 4px;
+
+     position: relative;
+     display: inline-block;
+
+}
+
+.places article h2 {
+     font-size: 30px;
+}
+
+
+/* -----pricebynight----- */
+.price article {
+     position: absolute;
+}
+.places div.price_by_night {
+     min-width: 60px;
+     height: 60px;
+     font-size: 30px;
+     color: #FF5A5F;
+
+     border: solid 4px #FF5A5F;
+     border-radius: 50%;
+
+     position: absolute;
+     top: 0;
+     right: 0;
+
+     margin: 10px;
+     
+     display: flex;
+     align-items: center;
+     justify-content: center;
+}
+
+/* _____information - owner------ */
+
+.places .information {
+     height: 80px;
+     margin-top: 30px;
+
+     border-top: solid 1px #DDDDDD;
+     border-bottom: solid 1px #DDDDDD;
+
+     display: flex;
+     justify-content: space-around;
+
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+.places section.user, section.description{
+     position: relative;
+     text-align: left;
+
+     margin-top: 20px;
+}
+
+
+/* ________section div.amenities_______________ */
+
+section ul {
+     padding-inline-start: 0 !important;
+}
+section div.amenities h2 {
+     font-size: 16px;
+     margin-top: 40px;
+
+     padding-bottom: 10px;
+
+     border-bottom: var(--border_bottom);
+
+}
+
+section div.amenities, div.reviews {
+
+     width: 100%;
+     text-align: start;
+}
+
+section div.amenities ul li {
+     display: flex;
+
+}
+
+section div.amenities ul li img {
+     width: 20px;
+     height: 20px;
+
+     margin: 10px;
+}
+
+/* ---------review--------- */
+section div.reviews h2 {
+     font-size: 16px;
+     margin-top: 40px;
+
+     padding-bottom: 10px;
+
+     border-bottom: var(--border_bottom);
+}
