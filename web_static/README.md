@@ -79,3 +79,70 @@ At the end of this project, you are expected to be able to  [explain to anyone](
 ## More Info
 
 ![alt text](https://s3.amazonaws.com/intranet-projects-files/concepts/74/hbnb_step1.png)
+
+
+
+
+
+### Full details
+
+#advanced
+
+Write an HTML page that displays a header, footer, a filters box with dropdown and results.
+
+Layout: (based on  `8-index.html`)
+
+Add more information to a Place  `article`:
+
+-   List of Amenities:
+    -   tag  `div`
+    -   classname  `amenities`
+    -   margin top 40px
+    -   contains:
+        -   title:
+            -   tag  `h2`
+            -   text  `Amenities`
+            -   font size 16px
+            -   border bottom #DDDDDD 1px
+        -   list of amenities:
+            -   tag  `ul`  /  `li`
+            -   no list style
+            -   icons on the left:  [Pet friendly](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_pets.png "Pet friendly"),  [TV](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_tv.png "TV"),  [Wifi](https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/268/icon_wifi.png "Wifi"), etc… feel free to add more
+-   List of Reviews:
+    -   tag  `div`
+    -   classname  `reviews`
+    -   margin top 40px
+    -   contains:
+        -   title:
+            -   tag  `h2`
+            -   text  `Reviews`
+            -   font size 16px
+            -   border bottom #DDDDDD 1px
+        -   list of review:
+            -   tag  `ul`  /  `li`
+            -   no list style
+            -   a review is described by:
+                -   `h3`  tag for the user/date description (font size 14px). Ex: “From Bob Dylan the 27th January 2017”
+                -   `p`  tag for the text (font size 12px)
+
+Requirements:
+
+-   You must use:  `header`,  `footer`,  `section`,  `article`,  `button`,  `h1`,  `h2`,  `h3`,  `h4`,  `ul`,  `li`  tags
+-   No inline style
+-   You are not allowed to use the  `img`  tag
+-   You are not allowed to use the  `style`  tag in the  `head`  tag
+-   All images must be stored in the  `images`  folder
+-   You must have 5 CSS files:
+    -   `styles/4-common.css`: for the global style (`body`  and  `.container`  styles)
+    -   `styles/3-header.css`: for the header style
+    -   `styles/3-footer.css`: for the footer style
+    -   `styles/6-filters.css`: for the filters style
+    -   `styles/100-places.css`: for the places style
+
+![](https://holbertonintranet.s3.amazonaws.com/uploads/medias/2020/9/0e0e57ed2baf9239cc87000a5f81b54011a924e9.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOU5BHMTQX4%2F20221028%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221028T040939Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=32ce32665754e532af616faa05e937101bb4cacf1f310dd473ad8ff1f45af45b)
+
+**Repo:**
+
+-   GitHub repository:  `holbertonschool-AirBnB_clone`
+-   Directory:  `web_static`
+-   File:  `100-index.html, styles/4-common.css, styles/3-header.css, styles/3-footer.css, styles/6-filters.css, styles/100-places.css, images/`
