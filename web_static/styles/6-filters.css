@@ -73,8 +73,8 @@ border-right: solid #DDDDDD 1px;
      border: solid 1px #DDDDDD;
      border-radius: 4px;
 
-/*      visibility: hidden;
-     opacity: 0; */
+     visibility: hidden;
+     opacity: 0;
      transition: 0.4s;
 
      position: absolute;
