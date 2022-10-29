@@ -1,0 +1,35 @@
+body {
+     margin: 0;
+     padding: 0;
+     color: #484848;
+     font-size: 14px;
+     font-family: Circular,"Helvetica Neue",Helvetica,Arial,sans-serif;
+     
+}
+
+@media (max-width: 800px) and (min-width:400px) 
+{
+     body {
+          overflow-x:hidden;
+      }
+}
+
+
+/* ---------Container filter------------- */
+div.container {
+     max-width: 1000px;
+     position: relative;
+     margin: 30px auto 30px auto;
+}
+
+
+li {
+     list-style: none;
+
+}
+
+
+:root{
+     --border_bottom: 1px #DDDDDD solid;
+     --font_size_h2: 16px;
+}
